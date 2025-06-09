@@ -26,11 +26,44 @@ html, body {
     height: 100%;
     z-index: -1;
 }
+
 .welcome {
     position: relative;
-    z-index: 1;
+    z-index: 0;
     color: aliceblue;
     text-align: center;
     font-size: 3rem;
     top: 10%;
+}
+
+#hamburger {
+    background-color: transparent;
+    border-width: 0;
+    position: absolute;
+    top: 20px;
+    right: 20px;
+    cursor: pointer;
+    font-size: 30px;
+    -webkit-text-fill-color: aliceblue;
+}
+
+#hamburger.show {
+    backdrop-filter: blur(10px);
+}
+
+
+#menu {
+    display: none;
+    flex-direction: column;
+    font-size: 20px;
+}
+
+#menu.show {
+    display: flex;
+    position: relative;
+    pointer-events: auto;
+}
+
+a:link{
+    -webkit-text-fill-color: aliceblue;    
 }

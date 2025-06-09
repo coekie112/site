@@ -1,6 +1,6 @@
 console.log("hello world");
 
-const canvas = document.getElementById("myCanvas");
+const canvas = document.getElementById("input");
 const ctx = canvas.getContext("2d");
 
 const img = new Image();
@@ -43,5 +43,5 @@ img.onload = () => {
         }
         ascii += "\n";
     }
-    document.getElementById("converted").textContent = ascii;
+    document.getElementById("output").textContent = ascii;
 }
