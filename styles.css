@@ -36,35 +36,81 @@ html, body {
     top: 10%;
 }
 
-#hamburger {
+#menubox {
+    position: fixed;
+    top: 30px;
+    right: 30px;
+
     background-color: transparent;
+    padding: 30px;
+    display: flex;
+    flex-direction: column;
+
+    gap: 20px;
+}
+
+#menubox.open {
+    backdrop-filter: blur(15px);
+    background: linear-gradient(30deg, rgba(255,255,255,0.01), rgba(255,255,255,0.005));
+    border: 0.5px solid rgba(255,255,255,0.3);
+    text-shadow: 0 0 10px rgba(240, 248, 255, 0.562);
+    border-radius: 12px;
+}
+
+#hamburger {
+    align-self: flex-end;
+
     border-width: 0;
-    position: absolute;
-    top: 20px;
-    right: 20px;
     cursor: pointer;
-    font-size: 30px;
-    -webkit-text-fill-color: aliceblue;
+    transition: 400ms;
+
+
+    display: flex;
+    flex-direction: column;
+    gap: 6px;
+
+    background-color: transparent;
 }
 
-#hamburger.show {
-    backdrop-filter: blur(10px);
+#hamburger:hover.closed {
+    gap: 12px;
 }
 
+#hamburger .line{
+    align-items: right;
+    height: 3px;    
+    background-color: aliceblue;
+    width: 30px;
+    transition: 400ms;
+}
 
 #menu {
-    display: none;
+    position: relative;
+    display: flex;
     flex-direction: column;
     font-size: 20px;
+    text-align: right;
+    gap: 0;
+    max-height: 0;
+    overflow: hidden;
+    transition: 400ms ease-in-out;
 }
 
-#menu.show {
-    display: flex;
-    position: relative;
-    pointer-events: auto;
+#menu.open {
+    max-height: 200px;
+    gap: 20px;
 }
 
 a:link,
 a:visited{
     -webkit-text-fill-color: aliceblue;    
+    text-decoration: none;
+}
+
+#topline.animation {
+    transform: translateY(4px) rotate(45deg);
+}
+
+#bottomline.animation {
+    transform: translateY(-4px) rotate(-45deg);
 }
