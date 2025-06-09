@@ -64,6 +64,7 @@ html, body {
     pointer-events: auto;
 }
 
-a:link{
+a:link,
+a:visited{
     -webkit-text-fill-color: aliceblue;    
 }
